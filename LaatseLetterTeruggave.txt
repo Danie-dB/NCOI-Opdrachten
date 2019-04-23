@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class LaatsteLetter {
+	public static void main(String[] args) {
+		System.out.println("Ik ga op vakantie en neem mee...");
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Voer item in: ");
+		String invoer1 = scan.next();
+		String totaal = invoer1;
+
+		System.out.println("Gezegd is: " + invoer1);
+		System.out.println("Voer het volgende item in: ");
+
+		for (;;) {
+			String invoer = scan.next();
+			totaal = totaal + " " + invoer;
+		    
+			System.out.println(invoer.charAt(0));
+			
+			//printout laatste letter (kan je hem aanspreken) NEE :(
+			// gelijk? iets mee doen: zou ik '==' voor gebruiken.
+			System.out.println("Gezegd is: " + totaal);
+			System.out.println("Voer het volgende item in: ");
+		}
+	}
+}

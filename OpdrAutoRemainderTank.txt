@@ -1,0 +1,72 @@
+import java.util.*;
+
+public class Chap4Opdr3Blz285 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Vehicle auto = new Vehicle();
+		System.out.println("Wat is de inhoud van uw tank?");
+		auto.setTankSize = sc.nextInt();
+		System.out.println("Uw tank bevat: " + auto.setTankSize + " liter. U kunt hiermee " + auto.setTankSize*10 + " kilometer rijden.");
+		System.out.println("Welke afstand wilt u afleggen in kilometers?");
+		auto.setEfficiency = sc.nextInt();
+		
+			if (auto.setEfficiency <= (auto.setTankSize*10)) {
+				System.out.println("Veel plezier!");
+			}
+			else if (auto.setEfficiency == (auto.setTankSize*10)) {
+				System.out.println("U wilt een afstand afleggen die exact in uw tank zit, het kan zijn dat u onderweg moet bijtanken.");
+			}
+			else {
+				System.out.println("U wilt verder dan uw tank aan brandstof kan opslaan. U zult onderweg moeten tanken.");
+			}
+		
+		System.out.println(" ");
+		System.out.println("Gezien uw tank op dit moment geheel leeg is, zult u voor aanvang van de reis eerst gaan tanken... \n");
+		System.out.println("U heeft zojuist getankt. Hoeveel litter brandstof heeft u getankt?");
+		auto.setFuelInTank = sc.nextInt();
+			if (auto.setFuelInTank > auto.setTankSize) {
+				System.out.println("Knap getankt! Maar dan is er vast iets overgelopen...");
+				System.out.println("Even poetsen en u kunt op weg!");
+			}
+			else if (auto.setFuelInTank >= auto.setTankSize) {
+				System.out.println("U heeft uw auto volgeladen en bent 'Ready to go'!");
+			}
+			else {
+				System.out.println("U heeft minder in uw tank gestopt dan erin past.");
+				if (auto.setFuelInTank*10 <= auto.setEfficiency) {
+					System.out.println("U wilt verder gaan rijden dan u zojuist getankt heeft. Het is raadzaam om wat extra te tanken om niet onderweg te hoeven tanken.");
+				}
+				else {
+					System.out.println("U kunt uw bestemming halen met de huidige tank.");
+				}
+			}
+			
+			System.out.println(" ");
+			System.out.println("----------------------------------------");
+			System.out.println("U heeft uw rondje gereden, welkom terug!");
+			
+			System.out.println("U heeft " + auto.setEfficiency + " km. afgelegd. Met een volle tank kan u " + auto.setTankSize*10 + " km. afleggen.\n");
+			int a = (auto.setTankSize*10) - auto.setEfficiency;
+			
+			if (a > 0) {
+					System.out.println("U kunt nog " + a +  " kilometer afleggen voor uw tank leeg is.");
+				}
+				else if (a == 0) {
+					System.out.println("U staat droog. Met nog "+ a + " liter in uw tank, dient er weer getankt te worden voordat u op reis gaat.");
+				}
+				else {
+					System.out.println("U heeft "+ a + " kilometer gereden, wat verder is dan uw tank aan inhoud heeft.");
+					System.out.println("Conclusie: u heeft onderweg getankt, anders was u niet thuisgekomen.");
+				}
+	}
+
+}
+
+
+class Vehicle {
+	int setTankSize;
+	int setEfficiency;
+	int setFuelInTank = 0;
+}
+

@@ -1,0 +1,64 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class HetPaasspelResultaat {
+	public static void main(String[] args) { 
+	System.out.println("Welkom bij Het Paasspel.");
+	System.out.println("Verzamel eitjes in drie beurten!");
+	System.out.println(" ");
+	System.out.println("Heb je een goed antwoord? Eitje erbij");
+	System.out.println("Foutje? eitje kwijt!");
+	System.out.println("Have fun!");
+	System.out.println(" ");
+	
+	String[] spelers = {"Speler 1", "Speler 2", "Speler 3"};
+	int[] eierenPP = {0, 0, 0};
+		
+	for (int aantalkeer=0; aantalkeer < 3 ;aantalkeer++) {
+	for (int spelerBeurt = 0; spelerBeurt < spelers.length; spelerBeurt++) {
+				
+		Random getal = new Random ();
+	int getal1 = getal.nextInt(10);
+	int getal2 = getal.nextInt(10);
+	System.out.println(spelers[spelerBeurt] + " is aan de beurt.");
+	System.out.println(getal1 + "+" + getal2 + "= ");
+	Scanner sc = new Scanner(System.in);
+	int antwoord = sc.nextInt();
+	
+		if (antwoord == (getal1+getal2)) {
+			System.out.println("Goed!");
+		
+		eierenPP[spelerBeurt] += 1;
+		}
+		else {
+			System.out.println("Fout :(");
+			if (eierenPP[spelerBeurt] > 0) {
+				eierenPP[spelerBeurt] -= 1;
+		}
+			
+		}
+		if (eierenPP[spelerBeurt] <1) {
+		System.out.println("Er liggen helaas geen eieren in je mandje.");
+		System.out.println(" ");
+		}
+		else if (eierenPP[spelerBeurt] == 1) {
+		System.out.println("Er ligt nu: " + eierenPP[spelerBeurt] + " ei in je mandje.");
+		System.out.println(" ");
+		}
+		else {
+		System.out.println("Er liggen nu: " + eierenPP[spelerBeurt] + " eieren in je mandje.");
+		System.out.println(" ");
+		}
+	}
+	}
+	System.out.println("Alle eieren zijn gevonden.");
+	System.out.println("Speler 1 heeft " + eierenPP[0] + " eieren in het mandje!");
+	System.out.println("Speler 2 heeft " + eierenPP[1] + " eieren in het mandje!");
+	System.out.println("Speler 3 heeft " + eierenPP[2] + " eieren in het mandje!");
+	System.out.println(" ");
+	System.out.println("Geniet van je eitjes, eet smakelijk!");
+	
+}	
+}
+
+

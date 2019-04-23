@@ -1,0 +1,19 @@
+
+public class PogingTweeLetterCount {
+	public static void main(String[] args) {
+		String org = "Deze regel heeft best veel eees.";
+		int res;
+		System.out.println(org);
+		System.out.println(countOccurrence(org, 'e'));
+	}
+	
+	static int countOccurrence(String s,char ch) {
+			int hoeveelheid = 0;
+			for(int i=0; i< s.length(); i++) {
+				if (s.charAt(i)==ch) {
+					++hoeveelheid;
+				}
+			}
+			return hoeveelheid;
+		}
+ }

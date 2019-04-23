@@ -1,0 +1,50 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class HetPaasEiSpel {
+
+	public static void main(String[] args) {
+		System.out.println("Welkom bij Het Paasspel.");
+		System.out.println("Verzamel eitjes!");
+		System.out.println(" ");
+		System.out.println("Heb je een goed antwoord? Eitje erbij");
+		System.out.println("Foutje? eitje kwijt!");
+		System.out.println("Have fun!");
+		System.out.println(" ");
+			
+		int eieren=0;
+		for (int beurt=0;eieren < 3 ;beurt++) {
+		Random getal = new Random ();
+		int getal1 = getal.nextInt(10);
+		int getal2 = getal.nextInt(10);
+		
+		System.out.println(getal1 + "+" + getal2 + "= ");
+		Scanner sc = new Scanner(System.in);
+		int antwoord = sc.nextInt();
+		
+			if (antwoord == (getal1+getal2)) {
+				System.out.println("Goed!");
+				if(beurt==1) {
+					System.out.println("Laat die eieren rollen!");
+			}
+			eieren += 1;
+			}
+			else {
+				System.out.println("Foutje... eitje kwijt! :( ");
+				if (eieren > 0) {
+				eieren -= 1;
+			}
+			}
+			if (eieren <1) {
+			System.out.println("Er liggen helaas geen eieren in je mandje.");
+			}
+			else if (eieren == 1) {
+			System.out.println("Er Ligt nu: " + eieren + " ei in je mandje.");
+			}
+			else {
+			System.out.println("Er liggen nu: " + eieren + " eieren in je mandje.");
+			}
+		}
+		System.out.println("Alle eieren zijn gevonden. Dit is het einde van het spel.");
+	}
+}

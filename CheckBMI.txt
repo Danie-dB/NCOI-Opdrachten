@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class CheckBMI {
+
+	public static void main(String[] args) {
+		  Scanner sc = new Scanner(System.in);
+		    System.out.println("Voer uw gewicht in ");
+		      double gewicht = sc.nextDouble();
+		      
+		    System.out.println("Voer uw lengte in ");
+		      double lengte = sc.nextDouble();
+		      
+		    double bmi = gewicht/(lengte*lengte);
+		    System.out.println("Uw BMI is: " + bmi);
+		    
+		    if (bmi <18) {
+		       System.out.println("Geel");
+		    } else if (bmi >18 && bmi <25) {
+		       System.out.println("Groen");
+		    } else {
+		       System.out.println("Rood");
+		    }
+	}
+}
+
+
+//double gewicht = 175.0;
+//double lengte = 1.75;
