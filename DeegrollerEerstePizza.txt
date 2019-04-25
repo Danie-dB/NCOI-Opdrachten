@@ -1,0 +1,84 @@
+
+public class Deegroller {
+		public static void main(String[] args) {
+
+			System.out.println("Let's eat Pizza!");
+			Pizza1 klein = new Pizza1();
+			Pizza2 medium = new Pizza2();
+			Pizza3 large = new Pizza3();
+			
+			System.out.println(" ");
+			System.out.println("De prijzen per pizza zijn al volgt opgesteld: ");
+			klein.calcCostSmall();
+			medium.calcCostMedium();
+			large.calcCostLarge();
+			
+			System.out.println(" ");
+			System.out.println("U kunt ook kiezen voor onze vaste Pizza's!");			
+			klein.smallPizza();
+			medium.mediumPizza();
+			large.largePizza();
+			System.out.println(" ");
+			System.out.println("Prijs voor onze vaste pizza's: ");
+			klein.cheese = 1*2;
+			klein.ham = 3*2;
+			System.out.println("Pizza little kost " + (klein.cheese + klein.ham + 10) + " dollar in totaal.");
+			medium.cheese = 2*2;
+			medium.ham = 3*2;
+			medium.pepperoni = 2*2;
+			System.out.println("The Regular pizza " + (medium.cheese + medium.ham + medium.pepperoni + 12) + " dollar in totaal.");
+			large.cheese = 4*2;
+			large.ham = 4*2;
+			large.pepperoni = 4*2;
+			System.out.println("The Hungry pizza " + (large.cheese + large.ham + large.pepperoni + 14) + " dollar in totaal.");
+			
+		}
+
+	}
+
+	class Pizza {		
+		public void calcCostSmall() {
+			int topPrijs = 2;
+			int Small = 10;
+			System.out.println("De kleinste maat pizza kost " + Small + " dollar, de toppings kosten " + topPrijs + " per stuk");
+	
+		}
+		public void calcCostMedium() {
+			int topPrijs = 2;
+			int Medium = 12;
+			System.out.println("De middelste maat pizza kost " + Medium + " dollar, de toppings kosten" + topPrijs + " per stuk");
+		}
+		public void calcCostLarge() {
+			int topPrijs = 2;
+			int Large = 14;
+			System.out.println("Grootste maat pizza kost " + Large + " dollar, de toppings kosten " + topPrijs + " per stuk");
+		}
+	}
+
+
+	class Pizza1 extends Pizza {
+		int cheese = 1;
+		int ham = 3;
+		int pepperoni = 0;
+		void smallPizza() {
+			System.out.println("Pizza Little bevat " + cheese + "x kaas, " + ham + "x ham en " + pepperoni + "x pepperoni. Eet smakkelijk!");
+		}
+	}
+
+	class Pizza2 extends Pizza {
+		int cheese = 2;
+		int ham = 3;
+		int pepperoni = 2;
+		void mediumPizza() {
+			System.out.println("The Regular pizza bevat " + cheese + "x kaas, " + ham + "x ham en " + pepperoni + "x pepperoni. Eet smakkelijk!");
+		}
+	}
+
+	class Pizza3 extends Pizza {
+		int cheese = 4;
+		int ham = 4;
+		int pepperoni = 4;
+		void largePizza() {
+			System.out.println("The Hungry pizza bevat " + cheese + "x kaas, " + ham + "x ham en " + pepperoni + "x pepperoni. Eet smakkelijk!");
+		}
+	}
