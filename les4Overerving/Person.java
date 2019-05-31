@@ -1,7 +1,10 @@
 package les4Overerving;
 
 public abstract class Person {
-	Person(String voornaam, String achternaam) {}
+	protected String voornaam; 
+	protected String achternaam;
+	
+	abstract void displayDetails();
 }
 
 
